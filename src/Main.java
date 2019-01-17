@@ -1,8 +1,10 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
 
@@ -10,8 +12,8 @@ public class Main {
 
         System.out.println("Histogram coding challenge");
 
-        Map<String, Integer> wordMap = new HashMap<>();
-        Integer counter;
+        List<Word> wordList = new ArrayList<>();
+        int index, currentCount;
         String word;
 
         // set filepath
@@ -27,19 +29,39 @@ public class Main {
         if (scanner != null) {
             while (scanner.hasNextLine()) {
                 word = scanner.next().replaceAll("[,.]", "").toLowerCase();
-                counter = wordMap.get(word);
-                wordMap.put(word, (counter == null) ? 1 : counter + 1);
+                index = checkListForWord(wordList, word);
+                if (index != -1){
+                    currentCount = wordList.get(index).getCount();
+                    wordList.get(index).setCount(currentCount + 1);
+                }else{
+                    Word wordObject = new Word(word, 1);
+                    wordList.add(wordObject);
+                }
             }
         }
 
-        printMap(wordMap);
+        wordList.sort(Comparator.comparing(Word::getCount));
+        Collections.reverse(wordList);
+
+        for (Word w : wordList) {
+            System.out.println("<" + w.getWord() + "," + w.getCount() + ">");
+        }
+
+        printHistogram(wordList);
+
     }
 
-    //pretty print a map
-    private static <K, V> void printMap(Map<K, V> map) {
-        for (Map.Entry<K, V> entry : map.entrySet()) {
-            System.out.println("<" + entry.getKey()
-                    + ", " + entry.getValue() + ">");
+    private static int checkListForWord(List<Word> list, String word){
+        for (Word w: list){
+            if (w.getWord().equals(word)){
+                return list.indexOf(w);
+            }
         }
+
+        return -1;
+    }
+
+    private static void printHistogram(List<Word> wordList){
+
     }
 }
