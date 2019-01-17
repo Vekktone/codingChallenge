@@ -3,23 +3,23 @@ public class Word {
     private String word;
     private Integer count;
 
-    public Word(String word, Integer count){
+    Word(String word, Integer count){
 
         this.word = word;
         this.count = count;
 
     }
 
-    public Integer getCount() {
+    Integer getCount() {
         return count;
     }
 
-    public void setCount(Integer count) {
+    void setCount(Integer count) {
         this.count = count;
     }
 
 
-    public String getWord() {
+    String getWord() {
         return word;
     }
 
