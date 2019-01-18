@@ -8,8 +8,18 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+/**
+ * The utilities class contains the main functions that we will use to count word occurrences and create our histogram
+ */
 class Utilities {
 
+    /**
+     * This function uses a string and a list of Word objects to search for the string in the list. This function is
+     * mainly used in the createSortedList function in order to increment the count of an existing word.
+     * @param list Word object list to be searched
+     * @param word specific word string that we want to find in the list of objects
+     * @return the index of the word; if not found returns -1
+     */
     private static int checkListForWord(List<Word> list, String word){
         for (Word w: list){
             if (w.getWord().equals(word)){
@@ -20,6 +30,13 @@ class Utilities {
         return -1;
     }
 
+    /**
+     * This function will take a completed Word list and output a histogram to a file called "output.txt"
+     * It uses StringBuilder to create the entire output in a single string, then that string is
+     * written to the output file.
+     * @param wordList list of Word objects used to create the histogram output
+     * @throws IOException used for opening the output file for writing
+     */
     static void printHistogram(List<Word> wordList) throws IOException {
         StringBuilder s = new StringBuilder();
         for (Word w: wordList){
@@ -37,6 +54,14 @@ class Utilities {
 
     }
 
+    /**
+     * This function contains the main logic of the program, which consists of using the scanner to parse the input,
+     * check the wordList for the current word, and either increment that word's count or create a new object to be
+     * inserted into the list. After the scanner finishes parsing, the list is sorted and reversed to get the data in
+     * ascending order. Finally, we return this list for printing.
+     * @param scanner this is the initialized scanner object ready to parse the input
+     * @return the sorted list of words and their occurrences contained in Word objects.
+     */
     static List<Word> createSortedList(Scanner scanner){
 
         List<Word> wordList = new ArrayList<>();
@@ -63,6 +88,10 @@ class Utilities {
         return wordList;
     }
 
+    /**
+     * This function created a scanner and initializes it with our file path.
+     * @return initialized scanner
+     */
     static Scanner initializeScanner(){
 
         // set filepath
