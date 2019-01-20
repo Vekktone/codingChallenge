@@ -70,7 +70,7 @@ class Utilities {
 
         if (scanner != null) {
             while (scanner.hasNextLine()) {
-                word = scanner.next().replaceAll("[,.]", "").toLowerCase();
+                word = scanner.next().replaceAll("[,.:!\"()]", "").toLowerCase();
                 index = checkListForWord(wordList, word);
                 if (index != -1){
                     currentCount = wordList.get(index).getCount();
