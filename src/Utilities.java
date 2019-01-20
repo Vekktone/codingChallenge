@@ -20,7 +20,7 @@ class Utilities {
      * @param word specific word string that we want to find in the list of objects
      * @return the index of the word; if not found returns -1
      */
-    public static int checkListForWord(List<Word> list, String word){
+    static int checkListForWord(List<Word> list, String word){
         for (Word w: list){
             if (w.getWord().equals(word)){
                 return list.indexOf(w);
