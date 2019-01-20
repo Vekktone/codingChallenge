@@ -1,5 +1,5 @@
 /**
- * Contains the basic file paths for testing
+ * Contains the basic file paths for input file as well as the unit test input file
  */
 class ApplicationConstants {
 
