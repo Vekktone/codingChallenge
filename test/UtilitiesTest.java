@@ -8,6 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UtilitiesTest {
 
+    /**
+     * This method will check a list and verify that if a specified word doesn't exist in the list,
+     * -1 will be returned
+     */
     @Test
     void checkWordListForNonExistentItem() {
         String testWord = "hello";
@@ -26,6 +30,10 @@ class UtilitiesTest {
 
     }
 
+    /**
+     * This method verifies that a newly created list will be sorted correctly. It only cares about the
+     * words in the list, not their counts.
+     */
     @Test
     void checkListForWordsInOrder() {
         List<Word> artificialSortedList = new ArrayList<>();
