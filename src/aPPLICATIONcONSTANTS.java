@@ -1,5 +1,8 @@
-public class ApplicationConstants {
+/**
+ * Contains the basic file paths for testing
+ */
+class ApplicationConstants {
 
-    public static final String FILEPATH = "C:\\Users\\riley\\IdeaProjects\\codingChallenge\\input.txt";
-    public static final String TESTFILEPATH = "C:\\Users\\riley\\IdeaProjects\\codingChallenge\\testInput.txt";
+    static final String FILEPATH = "C:\\Users\\riley\\IdeaProjects\\codingChallenge\\input.txt";
+    static final String TESTFILEPATH = "C:\\Users\\riley\\IdeaProjects\\codingChallenge\\testInput.txt";
 }
