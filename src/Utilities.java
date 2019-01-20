@@ -20,7 +20,7 @@ class Utilities {
      * @param word specific word string that we want to find in the list of objects
      * @return the index of the word; if not found returns -1
      */
-    private static int checkListForWord(List<Word> list, String word){
+    public static int checkListForWord(List<Word> list, String word){
         for (Word w: list){
             if (w.getWord().equals(word)){
                 return list.indexOf(w);
@@ -92,10 +92,10 @@ class Utilities {
      * This function created a scanner and initializes it with our file path.
      * @return initialized scanner
      */
-    static Scanner initializeScanner(){
+    static Scanner initializeScanner(String filepath){
 
         // set filepath
-        File file = new File("C:\\Users\\M108212\\IdeaProjects\\codingChallenge\\input.txt");
+        File file = new File(filepath);
         Scanner scanner = null;
 
         try {
