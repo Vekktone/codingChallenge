@@ -16,10 +16,10 @@ class UtilitiesTest {
     void checkWordListForNonExistentItem() {
         String testWord = "hello";
         List<Word> wordList = new ArrayList<>();
-        Word word1 = new Word("Cat", 1);
-        Word word2 = new Word("Dog", 1);
-        Word word3 = new Word("Rat", 1);
-        Word word4 = new Word("Hat", 1);
+        Word word1 = new Word("cat", 1);
+        Word word2 = new Word("dog", 1);
+        Word word3 = new Word("rat", 1);
+        Word word4 = new Word("hat", 1);
 
         wordList.add(word1);
         wordList.add(word2);
